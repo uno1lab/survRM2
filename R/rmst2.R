@@ -85,7 +85,7 @@ rmst2=function(time, status, arm, tau=NULL, covariates=NULL,                    
   }
 
   #--case 2: the last obs (smaller one)=event, the last obs (longer one)=censor
-  if((ss0max==0 & ss1max==1 & tt0max>tt1max) | (ss0max==1 & ss1max==0 & tt1max>tt0max)){
+  if((ss0max==0 & ss1max==1 & tt0max>=tt1max) | (ss0max==1 & ss1max==0 & tt1max>tt0max)){
     if(!is.null(tau)){
       if(tau>ttmax){stop(paste("The truncation time, tau, needs to be shorter than or equal to ", round(ttmax, digits=2)))}
       if(tau<=ttmax){tau=tau; NOTE=paste("The truncation time: tau =", tau, " was specified.")}
@@ -96,7 +96,7 @@ rmst2=function(time, status, arm, tau=NULL, covariates=NULL,                    
   }
 
   #--case 3: the last obs (smaller one)=censor, the last obs (longer one)=event
-  if((ss0max==1 & ss1max==0 & tt0max>tt1max) | (ss0max==0 & ss1max==1 & tt1max>tt0max)){
+  if((ss0max==1 & ss1max==0 & tt0max>=tt1max) | (ss0max==0 & ss1max==1 & tt1max>tt0max)){
     if(!is.null(tau)){
       if(tau>ttmin){stop(paste("The truncation time, tau, needs to be shorter than or equal to ", round(ttmin, digits=2)))}
       if(tau<=ttmin){tau=tau; NOTE=paste("The truncation time: tau =", tau, " was specified.")}
