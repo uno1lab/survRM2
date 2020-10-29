@@ -9,12 +9,26 @@
 #' @param status The status indicator, 1=event, and 0=right censored.
 #' @param arm The group indicator for comparison. The elements of this vector take either 1 or 0. Normally, 0=control group, 1=active treatment group.
 #' @param tau A scaler value to specify the truncation time point for the RMST calculation.
-#' \code{tau} needs to be smaller than the minimum of the largest observed time in each of the two groups. When \code{tau = NULL}, the default value (i.e., the minimum of the largest observed time in each of the two groups) is used.
+#' When \code{tau = NULL}, the default value is used. See Details for the definition of the default tau.
 #' @param covariates This specifies covariates to be used for the adjusted analyses. When NULL, unadjusted analyses are performed.
 #' When non NULL, the ANCOVA-type adjusted analyses are performed using those variables passed as \code{covariates}.
 #' This can be one variable (vector) or more than one variables (matrix).
 #' @param alpha The default is 0.05. (1-\code{alpha}) confidence intervals are reported.
-#' @details For more details, please see the package vignette: \code{browseVignettes(package = "survRM2")}
+#' @details The definition of the default tau.
+#' Let x1 and x0 be the maximum observed time in Group 1 and Group 0, respectively.
+#' Case 1: if the last observations in Group 1 and Group 0 are "event," then
+#' tau = max(x1, x0).
+#' Case 2-1: if the last observation in Group 1 is "event," the last observation in Group 0 is "censor," and x1<x0,
+#' tau = max(x1, x0)=x0.
+#' Case 2-2: if the last observation in Group 0 is "event," the last observation in Group 1 is "censor," and x1>x0,
+#' tau = max(x1, x0)=x1.
+#' Case 3-1: if the last observation in Group 1 is "event," the last observation in Group 0 is "censor," and x1 > x0,
+#' tau = min(x1, x0)=x0.
+#' Case 3-2 : if the last observation in Group 1 is "censor," the last observation in Group 0 is "event," and x1 < x0,
+#' tau = min(x1, x0)=x1.
+#' Case 4 : the last observations in Group 1 and Group 0 are "censor," then
+#' tau = min(x1, x0).
+#'
 #' @return an object of class rmst2.
 #' @return \item{tau}{the truncation time used in the analyses}
 #' @return \item{note}{a note regarding the truncation time}
