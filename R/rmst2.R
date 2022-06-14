@@ -18,15 +18,15 @@
 #' Let x1 and x0 be the maximum observed time in Group 1 and Group 0, respectively.
 #' Case 1: if the last observations in Group 1 and Group 0 are "event," then
 #' tau = max(x1, x0).
-#' Case 2-1: if the last observation in Group 1 is "event," the last observation in Group 0 is "censor," and x1<x0,
-#' tau = max(x1, x0)=x0.
-#' Case 2-2: if the last observation in Group 0 is "event," the last observation in Group 1 is "censor," and x1>x0,
-#' tau = max(x1, x0)=x1.
+#' Case 2-1: if the last observation in Group 1 is "event," the last observation in Group 0 is "censor," and x1 <= x0,
+#' tau = max(x1, x0) = x0.
+#' Case 2-2: if the last observation in Group 0 is "event," the last observation in Group 1 is "censor," and x1 > x0,
+#' tau = max(x1, x0) = x1.
 #' Case 3-1: if the last observation in Group 1 is "event," the last observation in Group 0 is "censor," and x1 > x0,
-#' tau = min(x1, x0)=x0.
-#' Case 3-2 : if the last observation in Group 1 is "censor," the last observation in Group 0 is "event," and x1 < x0,
-#' tau = min(x1, x0)=x1.
-#' Case 4 : the last observations in Group 1 and Group 0 are "censor," then
+#' tau = min(x1, x0) = x0.
+#' Case 3-2: if the last observation in Group 0 is "event," the last observation in Group 1 is "censor," and x1 <= x0,
+#' tau = min(x1, x0) = x1.
+#' Case 4: the last observations in Group 1 and Group 0 are "censor," then
 #' tau = min(x1, x0).
 #'
 #' @return an object of class rmst2.
@@ -40,11 +40,13 @@
 #' @return \item{RMST.difference.adjusted}{Results of the parameter estimates with the model to derive an adjusted difference in RMST.}
 #' @return \item{RMST.ratio.adjusted}{Results of the parameter estimates with the model to derive an adjusted ratio of RMST.}
 #' @return \item{RMTL.ratio.adjusted}{Results of the parameter estimates with the model to derive an adjusted ratio of RMTL.}
-#' @references Uno H, Claggett B, Tian L, Inoue E, Gallo P, Miyata T, Schrag D,
-#' Takeuchi M, Uyama Y, Zhao L, Skali H, Solomon S, Jacobus S, Hughes M,
-#' Packer M, Wei LJ. Moving beyond the hazard ratio in quantifying the between-group difference in survival analysis. Journal of clinical Oncology 2014, 32, 2380-2385.
+#' @references
+#' Uno H, Claggett B, Tian L, Inoue E, Gallo P, Miyata T, Schrag D,
+#' Takeuchi M, Uyama Y, Zhao L, Skali H, Solomon S, Jacobus S, HughesM,
+#' Packer M, Wei LJ. Moving beyond the hazard ratio in quantifying the between-group difference in survival analysis.
+#' Journal of clinical Oncology 2014, 32, 2380-2385. doi:10.1200/JCO.2014.55.2208.
 #'
-#' Tian L, Zhao L,  Wei LJ. Predicting the restricted mean event time with the subject's baseline covariates in survival analysis. Biostatistics 2014, 15, 222-233.
+#' Tian L, Zhao L,  Wei LJ. Predicting the restricted mean event time with the subject's baseline covariates in survival analysis. Biostatistics 2014, 15, 222-233. doi:10.1093/biostatistics/kxt050.
 #' @author Hajime Uno, Lu Tian, Miki Horiguchi, Angel Cronin, Chakib Battioui, James Bell
 #' @examples
 #' #--- sample data ---#
