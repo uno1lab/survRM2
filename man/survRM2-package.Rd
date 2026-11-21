@@ -2,12 +2,14 @@
 % Please edit documentation in R/survRM2-package.R
 \docType{package}
 \name{survRM2-package}
+\alias{survRM2}
 \alias{survRM2-package}
 \title{Comparing Restricted Mean Survival Time}
 \description{
 Performs two-sample comparisons using the restricted mean survival time (RMST) as a summary measure of the survival time distribution.
 Three kinds of between-group contrast metrics (i.e., the difference in RMST, the ratio of RMST and the ratio of the restricted mean time lost (RMTL)) are computed.
 The package has a function to perform an ANCOVA-type covariate adjustment as well as unadjusted analyses for those measures.
+Maintainer: Hajime Uno <huno@jimmy.harvard.edu>
 }
 \examples{
 #--- sample data ---#
@@ -37,8 +39,21 @@ Tian L, Zhao L,  Wei LJ. Predicting the restricted mean event time with the subj
 survival
 }
 \author{
-Hajime Uno, Lu Tian, Miki Horiguchi, Angel Cronin, Chakib Battioui, James Bell
+\strong{Maintainer}: Hajime Uno \email{huno@jimmy.harvard.edu}
 
-Maintainer: Hajime Uno <huno@jimmy.harvard.edu>
+Authors:
+\itemize{
+  \item Hajime Uno \email{huno@jimmy.harvard.edu}
+  \item Lu Tian
+  \item Miki Horiguchi
+  \item Angel Cronin
+  \item Chakib Battioui
+}
+
+Other contributors:
+\itemize{
+  \item James Bell [contributor]
+}
+
 }
 \keyword{survival}
