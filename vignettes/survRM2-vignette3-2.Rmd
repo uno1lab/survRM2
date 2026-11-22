@@ -1,12 +1,6 @@
 ---
-title: "Vignette for survRM2 package: 
-
-
-Comparing two survival curves using the restricted mean survival time"
-author: "Hajime Uno     
-
-
-Dana-Farber Cancer Institute"
+title: "Vignette for survRM2 package: Comparing two survival curves using the restricted mean survival time"
+author: "Hajime Uno, Dana-Farber Cancer Institute"
 date: "`February 21, 2017`"
 output: rmarkdown::html_vignette
 vignette: >

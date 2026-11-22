@@ -2,6 +2,7 @@
 % Please edit documentation in R/survRM2-package.R
 \docType{package}
 \name{survRM2-package}
+\alias{survRM2}
 \alias{survRM2-package}
 \title{Comparing Restricted Mean Survival Time}
 \description{
@@ -37,8 +38,21 @@ Tian L, Zhao L,  Wei LJ. Predicting the restricted mean event time with the subj
 survival
 }
 \author{
-Hajime Uno, Lu Tian, Miki Horiguchi, Angel Cronin, Chakib Battioui, James Bell
+\strong{Maintainer}: Hajime Uno \email{huno@jimmy.harvard.edu}
 
-Maintainer: Hajime Uno <huno@jimmy.harvard.edu>
+Authors:
+\itemize{
+  \item Hajime Uno \email{huno@jimmy.harvard.edu}
+  \item Lu Tian
+  \item Miki Horiguchi
+  \item Angel Cronin
+  \item Chakib Battioui
+}
+
+Other contributors:
+\itemize{
+  \item James Bell [contributor]
+}
+
 }
 \keyword{survival}
