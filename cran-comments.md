@@ -1,5 +1,3 @@
-This is re-submission.
-
 ## Update
 
 This is an update (version 1.0-5) in response to CRAN's request to fix
@@ -15,7 +13,7 @@ check problems.
 
 ## Test environments
 
-* R version 4.6.1
+* local: R 4.6.1 on macOS Tahoe 26.6.2
 * win-builder (devel, release)
 
 ## R CMD check results
